@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+		default-autowire="byName">
+	<context:annotation-config />
+	<context:component-scan base-package="cn.hinge.game" />
+	
+	<!-- 读取属性文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="location">
+			<value>classpath:jdbc-config.properties</value>
+		</property>
+	</bean>
+	<!-- c3p0数据源连接方式 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="user" value="root"/>
+		<property name="password" value=""/>
+	</bean>
+	<!-- JNDI数据源连接方式 -->
+<!-- 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!-- 		<property name="jndiName"> -->
+<!-- 			<value>${JNDI_PREFIX_SSM}${JDBC_SSM}</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="cn.hinge.game.sample.model"></property>
+<!-- 		<property name="plugins"> -->
+<!-- 			<array> -->
+<!-- 				<bean class=""></bean> -->
+<!-- 			</array> -->
+<!-- 		</property> -->
+<!-- 		<property name="configLocation" value="classpath:MyBatis-Configuration.xml"></property> -->
+<!-- 		<property name="typeAliasesPackage" value="cn.hinge.game.sample.model"></property> -->
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
+		<property name="basePackage" value="cn.hinge.game.sample.dao"></property>
+	</bean>
+</beans>

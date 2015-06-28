@@ -1,0 +1,10 @@
+
+#根日志记录器 日志级别 目的地
+log4j.rootLogger=DEBUG,CONSOLE
+
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+#布局定义
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+#布局
+log4j.appender.CONSOLE.layout.ConversionPattern=%p-%d - %m%n
+
