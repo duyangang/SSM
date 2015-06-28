@@ -1,4 +1,0 @@
-#JNDI\u7684\u540d\u5b57
-JDBC_SSM=jdbc/ssm
-#tomcat JDNI\u524d\u7f00 
-JNDI_PREFIX_SSM=java:comp/env/
