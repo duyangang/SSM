@@ -1,4 +1,4 @@
-package cn.hinge.game.sample.model;
+package org.dyg.sample.model;
 
 public class Sample {
     /**

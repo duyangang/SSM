@@ -1,4 +1,4 @@
-package cn.hinge.game.sample.model;
+package org.dyg.sample.model;
 
 import java.util.ArrayList;
 import java.util.List;

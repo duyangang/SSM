@@ -1,4 +1,4 @@
-package cn.hinge.game.utils.base.action;
+package org.dyg.utils.base.action;
 
 import java.util.Map;
 

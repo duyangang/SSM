@@ -8,8 +8,10 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
 	default-autowire="byName">
+	<!-- 开启Spring注解 -->
 	<context:annotation-config />
-	<context:component-scan base-package="cn.hinge.game" />
+	<!-- Spring注解扫描的包路径 -->
+	<context:component-scan base-package="org.dyg" />
 
 	<!-- 读取属性文件 -->
 	<bean id="propertyConfigurer"
@@ -36,7 +38,7 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="cn.hinge.game.sample.model"></property>
+		<property name="typeAliasesPackage" value="org.dyg.sample.model"></property>
 		<property name="plugins">
 			<array>
 				<bean class="com.github.pagehelper.PageHelper">
@@ -50,9 +52,8 @@
 			</array>
 		</property>
 		<!-- <property name="configLocation" value="classpath:MyBatis-Configuration.xml"></property> -->
-		<!-- <property name="typeAliasesPackage" value="cn.hinge.game.sample.model"></property> -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="cn.hinge.game.sample.dao"></property>
+		<property name="basePackage" value="org.dyg.*.dao"></property>
 	</bean>
 </beans>

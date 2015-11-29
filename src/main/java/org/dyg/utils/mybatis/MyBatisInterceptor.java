@@ -1,4 +1,4 @@
-package cn.hinge.game.utils.mybatis;
+package org.dyg.utils.mybatis;
 
 import java.util.Properties;
 

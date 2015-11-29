@@ -1,4 +1,4 @@
-package cn.hinge.game.utils.Spring;
+package org.dyg.utils.Spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

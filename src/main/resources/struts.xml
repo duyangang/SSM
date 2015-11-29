@@ -17,5 +17,7 @@
 			<result name="toAdd">/WEB-INF/jsp/sample/update.jsp</result>
 			<result name="fmTest" type="freemarker">/WEB-INF/ftl/login.ftl</result>
 		</action>
+		<action name="uploadAction" class="org.dyg.sample.web.FileUploadAction" method="doUpload">
+		</action>
 	</package>
 </struts>

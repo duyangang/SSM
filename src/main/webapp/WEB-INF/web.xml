@@ -3,14 +3,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
-	<display-name>Archetype Created Web Application</display-name>
-	<display-name>Archetype Created Web Application</display-name>
+	
+	<display-name></display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
-	<!-- spring的配置文件在哪里？ -->
+	<!-- listener demo -->
+	<!-- servlet容器启动或者关闭的时候首先会执行listener中的代码 然后再初始化filter、servlet等  -->
+	<!-- 启动：初始化servlet容器 创建servletContext全局对象 -->
+	<!-- 关闭：关闭servlet容器 释放资源 -->
+	<listener>
+		<listener-class>org.dyg.demo.base.listener.ServletContextListenerDemo</listener-class>
+	</listener>
+	
+	<!-- spring监听 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -18,12 +25,11 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring-config.xml</param-value>
 	</context-param>
-	<!-- 让struts2来拦截我们的请求路径吧 -->
+	<!-- Struts2 请求过滤器 -->
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 	</filter>
-
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>

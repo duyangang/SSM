@@ -3,7 +3,7 @@
  * 2014-7-16 
  * 
  *******************************************************************************/
-package cn.hinge.game.utils.page;
+package org.dyg.utils.page;
 
 /**
  * <pre>

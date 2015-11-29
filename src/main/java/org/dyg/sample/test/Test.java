@@ -3,12 +3,11 @@
  * 2014-7-15 
  * 
  *******************************************************************************/
-package cn.hinge.game.sample.test;
+package org.dyg.sample.test;
 
+import org.dyg.sample.service.SampleService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import cn.hinge.game.sample.service.SampleService;
 
 /**
  * <pre>

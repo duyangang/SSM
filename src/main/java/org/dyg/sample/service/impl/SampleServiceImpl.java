@@ -3,21 +3,20 @@
  * 2014-7-15 
  * 
  *******************************************************************************/
-package cn.hinge.game.sample.service.impl;
+package org.dyg.sample.service.impl;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.dyg.sample.dao.SampleMapper;
+import org.dyg.sample.model.Sample;
+import org.dyg.sample.model.SampleExample;
+import org.dyg.sample.service.SampleService;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-
-import cn.hinge.game.sample.dao.SampleMapper;
-import cn.hinge.game.sample.model.Sample;
-import cn.hinge.game.sample.model.SampleExample;
-import cn.hinge.game.sample.service.SampleService;
 
 /**
  * <pre>

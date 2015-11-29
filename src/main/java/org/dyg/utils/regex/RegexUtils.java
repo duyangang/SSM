@@ -1,4 +1,4 @@
-package cn.hinge.game.utils.regex;
+package org.dyg.utils.regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

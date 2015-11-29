@@ -1,9 +1,9 @@
-package cn.hinge.game.sample.dao;
+package org.dyg.sample.dao;
 
-import cn.hinge.game.sample.model.Sample;
-import cn.hinge.game.sample.model.SampleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.dyg.sample.model.Sample;
+import org.dyg.sample.model.SampleExample;
 
 public interface SampleMapper {
     /**

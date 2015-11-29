@@ -3,14 +3,14 @@
  * 2014-7-15 
  * 
  *******************************************************************************/
-package cn.hinge.game.sample.service;
+package org.dyg.sample.service;
 
 import java.util.List;
 
-import com.github.pagehelper.Page;
+import org.dyg.sample.model.Sample;
+import org.dyg.sample.model.SampleExample;
 
-import cn.hinge.game.sample.model.Sample;
-import cn.hinge.game.sample.model.SampleExample;
+import com.github.pagehelper.Page;
 
 /**
  * <pre>

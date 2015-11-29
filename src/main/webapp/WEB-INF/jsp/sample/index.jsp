@@ -11,6 +11,7 @@
 	<div style="margin: 0px auto;width:800px;">
 		<h2 style="text-align:center;">列表页面</h2>
 		<a href="<%=request.getContextPath()%>/sample!toAdd">增加</a>
+		<a href="<%=request.getContextPath()%>/sample!exportExcel">导出Excel</a>
 		<form action="<%=request.getContextPath()%>/sample!toIndex" method="post" id="form">
 			<input type="hidden" name="curPage" id="cur_page">
 			<fieldset style="margin-bottom: 10px;">
